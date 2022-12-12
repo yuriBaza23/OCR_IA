@@ -33,7 +33,6 @@ def main():
     # trainDir = 'train'
     # testDir = 'test'
 
-
     # Abrimos os arquivos com os dados de treino e teste.
     # Como resposta obtemos as features e as labels.
     print("Abrindo arquivos (pasta images)...\n")
@@ -46,7 +45,7 @@ def main():
     # Preparamos os arquivos de teste e treino conforme os
     # dados obtidos no passo anterior.
     print("Preparando testes e treinos (arquivo prepare)...\n")
-    if usingPrepare == True: FeatTrain, FeatTest, labelTrain, labelTest = pr.prepare(Features, labels)
+    if usingPrepare == True: FeatTrain, FeatTest, labelTrain, labelTest = pr.prepare(Features, labels, 0.7)
 
     # Normalizamos os dados de treino e teste.
     # Aqui escolhemos o zscore como método de normalização.
@@ -56,18 +55,22 @@ def main():
     # Começamos a aplicar os classificadores.
     # O primeiro que usamos foi o KNN
     # Passamos as features e labels de treino e teste.
-    # Aqui escolhemos o k = 1, 3, 5, 7, 9 e 11.
+    # Aqui escolhemos o k = 1, 3, 5, 7, 9, 11, 13, 15, 17 e 19.
     print("Aplicando KNN...")
     knnProbs = []
-    knnParameters = [1, 3, 5, 7, 9, 11]
+    knnParameters = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
     # Para facilitar o código, criamos uma lista com os resultados e
     # outra lista com os parâmetros do KNN.
     # Ao final, somamos todos os resultados para obter a probabilidade.
-    for i in range(6):
+    for i in range(len(knnParameters)):
         knnProbs.append(knn(FeatTrain, FeatTest, labelTrain, labelTest, knnParameters[i])) 
 
-    probs.append(knnProbs[0] + knnProbs[1] + knnProbs[2] + knnProbs[3] + knnProbs[4] + knnProbs[5])
+    sumKnn = 0
+    for i in range(len(knnParameters)):
+        sumKnn += knnProbs[i]
+        
+    probs.append(sumKnn)
     print('\n')
 
     # Aplicamos o Decision Tree.
