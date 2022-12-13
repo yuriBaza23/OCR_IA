@@ -11,7 +11,7 @@ def sumRule(labelTest, allProbs):
 
     matrix = matriz(labelTest, labelPred)
 
-    file.writelines("Matriz de confusão para a regra da soma:\n\n")
+    file.writelines("Arquivo correspondente a regra da soma:\n\n")
 
     a = []
 
@@ -23,6 +23,6 @@ def sumRule(labelTest, allProbs):
     for x in a:
         file.writelines(str(x) + "\n")
 
-    file.writelines("\n\nAcurácia de: " + str(acuracia) + "%.")
+    file.writelines("\n\nAcurácia =" + str(acuracia) + "%.")
 
     file.close()

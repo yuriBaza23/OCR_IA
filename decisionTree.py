@@ -20,7 +20,7 @@ def DT(FeatTrain, FeatTest, labelTrain, labelTest):
 
   matrix = matriz(labelTest, labelPred)
 
-  file.writelines("Matriz de confusão para Decision Tree:\n\n")
+  file.writelines("Arquivo correspondente ao DT:\n\n")
 
   a = []
 
@@ -32,7 +32,7 @@ def DT(FeatTrain, FeatTest, labelTrain, labelTest):
   for x in a:
     file.writelines(str(x) + "\n")
 
-  file.writelines("\n\nAcurácia de: " + str(acuracia) + "%.")
+  file.writelines("\n\nAcurácia =" + str(acuracia) + "%.")
 
   file.close()
 

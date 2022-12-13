@@ -22,7 +22,7 @@ def knn(FeatTrain, FeatTest, labelTrain, labelTest, i):
   matrix = matriz(labelTest, labelTred)
 
   print("Escrevendo arquivo para o KNN com k =", i)
-  file.writelines("Matriz de confusão para knn k = " + str(i) + "\n\n")
+  file.writelines("Arquivo correspondente ao knn k =" + str(i) + "\n\n")
 
   a = []
 
@@ -34,7 +34,7 @@ def knn(FeatTrain, FeatTest, labelTrain, labelTest, i):
   for x in a:
     file.writelines(str(x) + "\n")
 
-  file.writelines("\n\nAcurácia de: " + str(acuracia) + "%.")
+  file.writelines("\n\nAcurácia =" + str(acuracia) + "%.")
 
   file.close()
 

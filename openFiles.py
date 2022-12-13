@@ -16,6 +16,9 @@ import string
 # do diretório informado, terão o rotulo 0. Os arquivos contidos na pasta B do diretório informado,
 # terão o rotulo 1. E assim por diante.
 def openFiles(limit, mainDir, dir, values):
+    file = open("./results/featuresAndLabels.txt", 'w')
+    file.writelines("Arquivo correspondente as features e labels obtidas:\n\n")
+
     fileNames = []
     path = ''
 
@@ -116,4 +119,7 @@ def openFiles(limit, mainDir, dir, values):
                 X.append(values)
                 y.append(index)
 
+    file.writelines('Features: ' + str(len(X)) + "\n")
+    file.writelines('Labels: ' + str(len(y)) + "\n")
+    file.close()
     return (X, y)

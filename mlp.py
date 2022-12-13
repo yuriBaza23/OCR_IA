@@ -20,7 +20,7 @@ def MLP(FeatTrain, FeatTest, labelTrain, labelTest):
 
     matrix = matriz(labelTest, labelPred)
 
-    file.writelines("Matriz de confusão para MLP:\n\n")
+    file.writelines("Arquivo correspondente ao MLP:\n\n")
 
     a = []
 
@@ -32,7 +32,7 @@ def MLP(FeatTrain, FeatTest, labelTrain, labelTest):
     for x in a:
         file.writelines(str(x) + "\n")
         
-    file.writelines("\n\nAcurácia de: " + str(acuracia) + "%.")
+    file.writelines("\n\nAcurácia =" + str(acuracia) + "%.")
 
     file.close()
 

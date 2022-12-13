@@ -18,7 +18,7 @@ def RF(FeatTrain, FeatTest, labelTrain, labelTest):
 
     matrix = matriz(labelTest, labelPred)
 
-    file.writelines("Matriz de confusão para Random Forest:\n\n")
+    file.writelines("Arquivo correspondente ao Random Forest:\n\n")
 
     a = []
 
@@ -30,7 +30,7 @@ def RF(FeatTrain, FeatTest, labelTrain, labelTest):
     for x in a:
         file.writelines(str(x) + "\n")
 
-    file.writelines("\n\nAcurácia de: " + str(acuracia) + "%.")
+    file.writelines("\n\nAcurácia =" + str(acuracia) + "%.")
 
     file.close()
 

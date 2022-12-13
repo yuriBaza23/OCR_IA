@@ -20,7 +20,7 @@ def svm(FeatTrain, FeatTest, labelTrain, labelTest):
 
   matrix = matriz(labelTest, labelPred)
 
-  file.writelines("Matriz de confusão para SVM:\n\n")
+  file.writelines("Arquivo correspondente ao SVM:\n\n")
 
   a = []
 
@@ -32,7 +32,7 @@ def svm(FeatTrain, FeatTest, labelTrain, labelTest):
   for x in a:
     file.writelines(str(x) + "\n")
 
-  file.writelines("\n\nAcurácia de: " + str(acuracia) + "%.")
+  file.writelines("\n\nAcurácia =" + str(acuracia) + "%.")
 
   file.close()
 
